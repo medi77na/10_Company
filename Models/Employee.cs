@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using System.Threading.Tasks;
+using _10_Company.Enums;
 
 namespace _10_Company.Models;
 public class Employee
@@ -12,10 +13,10 @@ public class Employee
     public string? LastName { get; set; }
     public string? IdentityNumber { get; set; }
     public DateOnly BirthDate { get; set; }
-    public string? Position { get; set; }
+    public Positions Position { get; set; }
     public double Salary { get; set; }
 
-    public Employee(string name, string lastName, string identityNumber, DateOnly birthDate, string position, double salary)
+    public Employee(string name, string lastName, string identityNumber, DateOnly birthDate, Positions position, double salary)
     {
         Id = Guid.NewGuid();
         Name = name;

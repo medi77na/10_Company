@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using _10_Company.Enums;
 
 namespace _10_Company.Models
 {
@@ -42,9 +43,11 @@ namespace _10_Company.Models
             return DateOnly.FromDateTime(new DateTime(RequestBirthYear(), RequestBirthMonth(), RequestBirthDay()));
         }
 
-        public static string? RequestPosition()
+        public static Positions RequestPosition()
         {
-            return Validation.ValidateString("Digite el cargo: ");
+            RequestShowPositions();
+            int indexPosition = Validation.ValidateIntWithRange("Digite el número del cargo: ",1,Enum.GetValues(typeof(Positions)).Length)-1;
+            return (Positions)indexPosition;
         }
 
         public static double RequestSalary()
@@ -69,6 +72,18 @@ namespace _10_Company.Models
 5. Cargo
 6. Salario
 ----------------------------------------------------------------");
+        }
+
+        public static void RequestShowPositions()
+        {
+            Console.WriteLine(" ");
+            Console.WriteLine("CARGOS EN LA EMPRESA: ");
+            Console.WriteLine(" ");
+            foreach (Positions position in Enum.GetValues(typeof(Positions)))
+            {
+                Console.WriteLine($"{((int)position)+1}. {position}");
+            }
+            Console.WriteLine(" ");
         }
     }
 }

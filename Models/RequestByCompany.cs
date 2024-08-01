@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using _10_Company.Enums;
 
 namespace _10_Company.Models
 {
@@ -12,11 +13,11 @@ namespace _10_Company.Models
         {
             Company.Initialize("David Development", "Calle 123, Los Ángeles, CP 12345");
 
-            Company.AddEmployee(new Employee("luis", "diaz", "100985674", DateOnly.FromDateTime(new DateTime(1995, 06, 15)), "gerente", 3000000));
-            Company.AddEmployee(new Employee("ana", "martinez", "100234567", DateOnly.FromDateTime(new DateTime(1988, 04, 23)), "desarrollador", 2000000));
-            Company.AddEmployee(new Employee("carlos", "lopez", "100345678", DateOnly.FromDateTime(new DateTime(1990, 12, 05)), "analista", 2500000));
-            Company.AddEmployee(new Employee("maria", "gomez", "100456789", DateOnly.FromDateTime(new DateTime(1985, 07, 30)), "administrador", 3500000));
-            Company.AddEmployee(new Employee("pedro", "perez", "100567890", DateOnly.FromDateTime(new DateTime(1992, 09, 10)), "contador", 2800000));
+            Company.AddEmployee(new Employee("luis", "diaz", "100985674", DateOnly.FromDateTime(new DateTime(1995, 06, 15)), Positions.gerente, 3000000));
+            Company.AddEmployee(new Employee("ana", "martinez", "100234567", DateOnly.FromDateTime(new DateTime(1988, 04, 23)), Positions.desarrollador, 2000000));
+            Company.AddEmployee(new Employee("carlos", "lopez", "100345678", DateOnly.FromDateTime(new DateTime(1990, 12, 05)), Positions.analista, 2500000));
+            Company.AddEmployee(new Employee("maria", "gomez", "100456789", DateOnly.FromDateTime(new DateTime(1985, 07, 30)), Positions.contador, 3500000));
+            Company.AddEmployee(new Employee("pedro", "perez", "100567890", DateOnly.FromDateTime(new DateTime(1992, 09, 10)), Positions.tester, 2800000));
         }
 
         public static void RequestAddEmployee()
