@@ -6,23 +6,18 @@ using System.Threading.Tasks;
 using _10_Company.Enums;
 
 namespace _10_Company.Models;
-public class Employee
+public class Employee : Person
 {
     public Guid Id { get; set; }
-    public string? Name { get; set; }
-    public string? LastName { get; set; }
     public string? IdentityNumber { get; set; }
-    public DateOnly BirthDate { get; set; }
     public Positions Position { get; set; }
-    public double Salary { get; set; }
+    public double Salary { get; set; } 
 
     public Employee(string name, string lastName, string identityNumber, DateOnly birthDate, Positions position, double salary)
+    : base(name, lastName, birthDate)
     {
         Id = Guid.NewGuid();
-        Name = name;
-        LastName = lastName;
         IdentityNumber = identityNumber;
-        BirthDate = birthDate;
         Position = position;
         Salary = salary;
     }

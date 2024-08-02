@@ -7,40 +7,10 @@ using _10_Company.Enums;
 namespace _10_Company.Models
 {
     public class RequestByEmployee
-    {
-        public static string? RequestName()
-        {
-            return Validation.ValidateString("Digite el nombre: ");
-        }
-
-        public static string? RequestLastName()
-        {
-            return Validation.ValidateString("Digite el apellido: ");
-        }
-
+    {        
         public static string? RequestIdentityNumber()
         {
             return Validation.ValidateString("Digite el número de identidad: ");
-        }
-
-        private static int RequestBirthYear()
-        {
-            return Validation.ValidateInt("Digite el año de nacimiento: ");
-        }
-
-        private static int RequestBirthMonth()
-        {
-            return Validation.ValidateInt("Digite el número del mes de nacimiento: ");
-        }
-
-        private static int RequestBirthDay()
-        {
-            return Validation.ValidateInt("Digite el número del día de nacimiento: ");
-        }
-
-        public static DateOnly RequestBirthDate()
-        {
-            return DateOnly.FromDateTime(new DateTime(RequestBirthYear(), RequestBirthMonth(), RequestBirthDay()));
         }
 
         public static Positions RequestPosition()
@@ -57,7 +27,7 @@ namespace _10_Company.Models
 
         public static Employee RequestDataEmployee()
         {
-            return new Employee(RequestName(), RequestLastName(), RequestIdentityNumber(), RequestBirthDate(), RequestPosition(), RequestSalary());
+            return new Employee(RequestByPerson.RequestName(), RequestByPerson.RequestLastName(), RequestIdentityNumber(), RequestByPerson.RequestBirthDate(), RequestPosition(), RequestSalary());
         }
 
         public static void RequestShowProperties()
